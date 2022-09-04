@@ -15,3 +15,8 @@ class ProductPageLocators:
     ALERT_PRODUCT_ADDED_TO_BASKET = (By.CSS_SELECTOR, ".alertinner strong")
     PRODUCT_NAME = (By.TAG_NAME, "h1")
     PRODUCT_PRICE = (By.CSS_SELECTOR, "div[class='col-sm-6 product_main'] p[class='price_color']")
+
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
