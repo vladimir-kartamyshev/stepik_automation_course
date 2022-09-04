@@ -22,4 +22,28 @@ def test_guest_can_add_product_to_basket(browser, link):
     product_page.solve_quiz_and_get_code()
     product_page.should_be_alert_product_added_to_basket()
     product_page.should_be_product_price_in_alert_is_product_price()
-    # time.sleep(1000)
+
+
+@pytest.mark.xfail
+def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
+    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
+    product_page = ProductPage(browser, link)
+    product_page.open()
+    product_page.click_button_add_to_basket()
+    product_page.should_not_be_success_message()
+
+
+def test_guest_cant_see_success_message(browser):
+    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
+    product_page = ProductPage(browser, link)
+    product_page.open()
+    product_page.should_not_be_success_message()
+
+
+@pytest.mark.xfail
+def test_message_disappeared_after_adding_product_to_basket(browser):
+    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
+    product_page = ProductPage(browser, link)
+    product_page.open()
+    product_page.click_button_add_to_basket()
+    product_page.should_be_success_message_is_disappeared()

@@ -25,8 +25,13 @@ class ProductPage(BasePage):
         price_product_in_alert = self.browser.find_elements(*ProductPageLocators.ALERT_PRODUCT_ADDED_TO_BASKET)[2]
         assert price_product_in_alert.text == self.get_product_price(), "Product price in alert is not product price"
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.ALERT_PRODUCT_ADDED_TO_BASKET), \
+            "Success message is presented, but should not be"
 
-
+    def should_be_success_message_is_disappeared(self):
+        assert self.is_disappeared(*ProductPageLocators.ALERT_PRODUCT_ADDED_TO_BASKET), \
+            "Success message is not disappeared"
 
 
 
