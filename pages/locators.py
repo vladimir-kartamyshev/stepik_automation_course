@@ -20,3 +20,9 @@ class ProductPageLocators:
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET_LINK = (By.PARTIAL_LINK_TEXT, "basket")
+
+
+class BasketPageLocators():
+    BASKET_ITEMS = (By.CLASS_NAME, "basket-items")
+    MESSAGE_BASKET_IS_EMPTY = (By.CSS_SELECTOR, "#content_inner")
