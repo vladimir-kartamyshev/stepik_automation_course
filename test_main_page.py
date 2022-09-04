@@ -1,5 +1,3 @@
-import time
-
 from pages.basket_page import BasketPage
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
@@ -29,5 +27,4 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     basket_page = BasketPage(browser, link)
     basket_page.should_not_be_items_in_basket()
     basket_page.should_be_message_basket_is_empty()
-    # time.sleep(1000)
 
